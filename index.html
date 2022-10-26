@@ -245,14 +245,21 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span class="fa fa-pause"></span>
+                    </button>
+
+                     <!-- PAUSE AND PLAY BUTTON -->
+                    <!-- <div class="btn-group" id="carouselButton"> -->
+                        <!-- <button class="btn btn-danger btn-sm" id="carousel-pause">
                             <span class="fa fa-pause"></span>
-                        </button>
-                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                        </button> -->
+                        <!-- <button class="btn btn-danger btn-sm" id="carousel-play">
                             <span class="fa fa-play"></span>
-                        </button>
-                    </div>
+                        </button> -->
+                    <!-- </div> -->
+
+                    
                 </div>
             </div>
         </div>
@@ -435,12 +442,21 @@
         $(document).ready(
             function(){
             $('#mycarousel').carousel({interval: 2000});
-            $('#carousel-pause').click(function(){
-                $('#mycarousel').carousel('pause');
+            $('#carouselButton').click(function(){
+                if($('#carouselButton').children('span').hasClass('fa fa-pause')){
+                    $('#mycarousel').carousel('pause');
+                    $('#carouselButton').children('span').removeClass('fa fa-pause');
+                    $('#carouselButton').children('span').addClass('fa fa-play');
+                } 
+                else if($('#carouselButton').children('span').hasClass('fa fa-play')){
+                    $('#mycarousel').carousel('cycle');
+                    $('#carouselButton').children('span').removeClass('fa fa-play');
+                    $('#carouselButton').children('span').addClass('fa fa-pause');
+                }
             });
-            $('#carousel-play').click(function(){
-                $('#mycarousel').carousel('cycle');
-            });
+            // $('#carousel-play').click(function(){
+            //     $('#mycarousel').carousel('cycle');
+            // });
         });
     </script>
 </body>
