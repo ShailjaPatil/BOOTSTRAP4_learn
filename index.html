@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal" >
+                    <a data-toggle="modal" id="#loginModal" >
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -197,7 +197,7 @@
                        data-placement="bottom" href="#Reserve"><h6>Reserve Table</h6> </a> -->
 
                     <a role="button" class="btn btn-block btn-warning " 
-                       data-toggle="modal" data-target="#ReserveForm" ><h6>Reserve Table</h6> 
+                        id="#ReserveForm" ><h6>Reserve Table</h6> 
                     </a>
                 </div>
             </div>
@@ -438,27 +438,8 @@
         });
     </script> -->
 
-    <script>
-        $(document).ready(
-            function(){
-            $('#mycarousel').carousel({interval: 2000});
-            $('#carouselButton').click(function(){
-                if($('#carouselButton').children('span').hasClass('fa fa-pause')){
-                    $('#mycarousel').carousel('pause');
-                    $('#carouselButton').children('span').removeClass('fa fa-pause');
-                    $('#carouselButton').children('span').addClass('fa fa-play');
-                } 
-                else if($('#carouselButton').children('span').hasClass('fa fa-play')){
-                    $('#mycarousel').carousel('cycle');
-                    $('#carouselButton').children('span').removeClass('fa fa-play');
-                    $('#carouselButton').children('span').addClass('fa fa-pause');
-                }
-            });
-            // $('#carousel-play').click(function(){
-            //     $('#mycarousel').carousel('cycle');
-            // });
-        });
-    </script>
+    <script src="js/scripts.js"></script>
+    
 </body>
 
 </html>
